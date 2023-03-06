@@ -1,0 +1,194 @@
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+*:before, *:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-weight: 400
+	overflow-x: hidden
+	margin: 0
+	height: 100vh
+	font-family: 'Roboto Serif', serif
+	
+p
+	margin: 0
+
+a
+	text-decoration: none
+	outline: none
+	display: inline-block
+	color: #000
+
+img
+	max-width: 100%
+	height: auto
+	vertical-align: bottom
+
+ul li,
+ol li
+	list-style: none
+	display: block
+	margin: 0
+
+span
+	display: inline-block
+
+ul, ol
+	display: block
+	margin: 0
+	padding-left: 0
+
+button
+	outline: none
+	border: 0
+	padding: 0
+	cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-weight: normal
+
+strong
+	display: inline-block
+
+.site-wrap
+	overflow: hidden
+.container
+	margin: 0 auto
+	position: relative
+	padding: 0 15px
+	max-width: 1270px
+	width: 100%
+
+
+.page-achievement
+	&-title
+		font-size: 24px
+		font-weight: 500
+	&-wrapper
+		margin-top: 60px
+		&__list
+			display: grid
+			grid-template-columns: repeat(3, 1fr)
+			grid-column-gap: 12px
+			grid-row-gap: 45px
+			&--item
+				display: flex
+				width: max-content
+				background: transparent
+				&:hover
+					.page-achievement-wrapper__list--getbonus
+						color: green
+			&--image
+				margin-right: 18px
+			&--img
+			&--date
+				opacity: 0
+				font-size: 10px
+				color: #262626
+				transition: .5s
+			&--actions
+				max-width: 261px
+				width: 100%
+				text-align: left
+				color: #262626
+			&--progress
+				margin-bottom: 2px
+			&--square
+				width: 9px
+				height: 8px
+				clip-path: polygon(0 0, 75% 0%, 100% 50%, 75% 100%, 0 100%, 32% 50%)
+				background: #D7D7D7
+				margin-left: 0.1px
+				border-radius: 0.5px
+				box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1)
+				&.active-square
+					background: linear-gradient(180deg, #000AFF 0%, #03064D 94.44%)
+				&.active-square-green
+					background: linear-gradient(180deg, #00ff80 0%, #3ab34d 94.44%)
+				&:first-child
+					margin-left: 0
+			&--title
+				font-size: 20px
+				font-weight: 700
+				text-transform: capitalize
+				margin-bottom: 4px
+			&--desc
+				font-size: 16px
+				margin-bottom: 4px
+			&--change
+				font-size: 14px
+				color: #FE7805
+			&--getbonus
+				color: #0100D3
+			&--bonus-received
+				position: relative
+				padding-right: 5px
+				font-weight: 600
+				color: #30DB5B
+				&::after
+					content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH4SURBVHgBjZRNbhMxFMffcx02bOYGTBYFscLcIDkBZVdBpExOANwgOQHqCTpIVdVdywkaTlDvEC1S5ghZsSCeuH8/Z5LMZJrGUuKPee9nv0+mlmEeBj1iP6QlYaY0nvKcaDklTz/t68u8TY9rkFmWklucY9mTA08FKZpCLME6wUFvpVVQyd/sm4sb8/fzkLxP7fHlZA0z95khdrdQgKI/o86/se3ezGuX/T5NSesMMl/wOyPmGS7J41c/5s2L3N1K56M9vpjSnmFmJwmVLz9sQAKbaJnLBV4UzOD+c6AovwuCmWMlzvZwMlN+CCj6qA4i/UL2SqIWxqKcbMzIUvNncHIQKPjNLe4izLOBgLVvr4oKJGYrfy3Ke0DBNLjmPTaJmZ2m8JlHFEP4K3+472K2yFMOCFXrXZCcx4g7neqmKXSkR3h2gJldSAPUGEoSc53lRLabz0l3+mG5K94CYv9KZu0KhelXMMvcfzL7gU++KGRDYbtXgDHn8QYebkvUge0gPCAT/6ro81gBD4PbWHcHJi1tRX2JTVn2QzYo+eLcCP+ICtIhJPGhIIk6Xr1Kq61CDz7jawkGqoGOOhOYWjQgCbn/KHL1VRpCw/x6C4pd4XzdaqK/EG30Mi+pUqVLOBs1XcKtZki9+gwK7ySpK4BiSyX9CH2sTe8RcA0FEibv5fAAAAAASUVORK5CYII=)
+					position: absolute
+					left: 100%
+					animation: opacityCheck 1.4s linear
+					opacity: 0
+				
+@keyframes opacityCheck
+	0%
+		opacity: 1
+	100%
+		opacity: 0
+
+		
+@media screen and (max-width: 1200px)
+	.page-achievement-wrapper__list--actions
+		max-width: 250px
+	.page-achievement-wrapper__list--img
+		max-width: 85px
+	.page-achievement-wrapper__list--title
+		font-size: 17px
+	.page-achievement-wrapper__list--desc
+		font-size: 14px
+
+@media screen and (max-width: 1110px)
+	.page-achievement-wrapper__list--actions
+		max-width: 240px
+
+@media screen and (max-width: 1080px)
+	.page-achievement-wrapper__list
+		grid-template-columns: repeat(2, 1fr)
+
+@media screen and (max-width: 479px)	
+	.page-achievement-wrapper__list
+		grid-template-columns: repeat(1, 1fr)
+	.page-achievement-wrapper__list--title
+		font-size: 20px
+		.page-achievement-wrapper__list--desc
+		font-size: 16px
+	.page-achievement-wrapper__list--img
+		max-width: unset
+	
