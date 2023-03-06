@@ -5,7 +5,6 @@ class MyAchievements {
     this.list = document.querySelector(list);
   }
   progressBars() {
-
     if(this?.progressBar) {
       this.progressBar.forEach(progressBar => {
         const progressPercent = +progressBar.dataset.progress,
@@ -13,11 +12,10 @@ class MyAchievements {
               parent = progressBar.closest('.page-achievement-wrapper__list--item'),
               getBonus = parent.querySelector('.page-achievement-wrapper__list--change');
 
-
         if(progressPercent == 100) {
           getBonus.innerHTML = '<span class="page-achievement-wrapper__list--getbonus">Получить 1 000 бонусов</span>';
         }
-        
+
         for (let i = 0; i <= 25; i++) {
           const square = document.createElement('span');
           square.classList.add('page-achievement-wrapper__list--square');
@@ -27,7 +25,10 @@ class MyAchievements {
             parent.style.filter = "grayscale(100%)";
             parent.style.pointerEvents = 'none';
           }else if(i <= passedNumber) {
-            square.classList.add('active-square');
+            setTimeout(() => {
+              square.classList.add('active-square');
+            }, 75 * i + 1, i);
+            
           }else if(progressPercent != 100) {
             parent.style.pointerEvents = 'none';
           }
@@ -36,9 +37,7 @@ class MyAchievements {
         }
         
       });
-
     }
-
   }
 
   buttonChange() {
@@ -63,16 +62,14 @@ class MyAchievements {
   }
 
   itemSort() {
-    const th = this;
     if(this?.list) {
       const sortedList = Array.prototype.slice.call(this.list).sort((x, y) => {
-        return y.dataset['sort'] -x.dataset['sort'];
+        return y.dataset['sort'] - x.dataset['sort'];
      });
- 
+
      sortedList.forEach(elm =>  {
-       th.list.appendChild(elm);
-     }); 
-      
+       this.list.appendChild(elm);
+     });
     }
   }
 }
