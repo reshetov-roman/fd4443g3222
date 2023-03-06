@@ -21,23 +21,15 @@ class MyAchievements {
         for (let i = 0; i <= 25; i++) {
           const square = document.createElement('span');
           square.classList.add('page-achievement-wrapper__list--square');
-          
-
-          parent.dataset.id = progressPercent;
+          parent.dataset.sort = progressPercent;
 
           if(progressPercent == 0) {
             parent.style.filter = "grayscale(100%)";
             parent.style.pointerEvents = 'none';
-            // parent.dataset.sort = i+3;
           }else if(i <= passedNumber) {
             square.classList.add('active-square');
           }else if(progressPercent != 100) {
-            // parent.dataset.sort = i+2;
             parent.style.pointerEvents = 'none';
-          }
-
-          if(progressPercent == 100) {
-            // parent.dataset.sort = i+1;
           }
       
           progressBar.appendChild(square);
@@ -74,7 +66,7 @@ class MyAchievements {
     const th = this;
     if(this?.list) {
       const sortedList = Array.prototype.slice.call(this.list).sort((x, y) => {
-        return y.dataset['id'] -x.dataset['id'];
+        return y.dataset['sort'] -x.dataset['sort'];
      });
  
      sortedList.forEach(elm =>  {
