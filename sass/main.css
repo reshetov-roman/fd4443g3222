@@ -233,4 +233,7 @@ strong {
   .page-achievement-wrapper__list--img {
     max-width: unset;
   }
+  .page-achievement-wrapper__list {
+    grid-row-gap: 15px;
+  }
 }/*# sourceMappingURL=main.css.map */

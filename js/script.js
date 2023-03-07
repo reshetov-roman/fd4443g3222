@@ -28,7 +28,6 @@ class MyAchievements {
             setTimeout(() => {
               square.classList.add('active-square');
             }, 75 * i + 1, i);
-            
           }else if(progressPercent != 100) {
             parent.style.pointerEvents = 'none';
           }
@@ -48,14 +47,21 @@ class MyAchievements {
           date = parent.querySelector('.page-achievement-wrapper__list--date'),
           getBonus = parent.querySelector('.page-achievement-wrapper__list--change'),
           progress = parent.querySelectorAll('.page-achievement-wrapper__list--progress');
-          getBonus.innerHTML = '<span class="page-achievement-wrapper__list--bonus-received">Получено 1 000 бонусов</span>';
-          date.style.opacity = 1;
-          progress.forEach(square => {
-            square.querySelectorAll('span').forEach(elm => {
-              elm.classList.remove('active-square');
-              elm.classList.add('active-square-green');
+
+          if(parent.classList.contains('bonuses_received')) {
+            return;
+          }else {
+            getBonus.innerHTML = '<span class="page-achievement-wrapper__list--bonus-received">Получено 1 000 бонусов</span>';
+            date.style.opacity = 1;
+            progress.forEach(square => {
+              square.querySelectorAll('span').forEach(elm => {
+                elm.classList.remove('active-square');
+                elm.classList.add('active-square-green');
+              });
             });
-          });
+          parent.classList.add('bonuses_received');
+          parent.style.pointerEvents = 'none';
+          }
         });
       });
     }
